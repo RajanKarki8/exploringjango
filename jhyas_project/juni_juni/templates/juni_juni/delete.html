@@ -1,0 +1,16 @@
+{%extends 'juni_juni/base.html'%}
+{% block content%}
+
+<p> Are You Sure delete? {{tasks}}</p>
+<div class='container'>
+<form method ='POST'>
+    {%csrf_token %}
+    <button class ='btn btn-danger' type ='submit'> Sure Delete !</butoon>
+    </form>
+    </div>
+ 
+<a class='hidden' href ='{%url 'poet-home'%}'>
+    <button class = 'btn-btn-primary btn-sm'>Cancel</button>
+</a>
+
+{%endblock content%}

@@ -1,0 +1,25 @@
+{%extends 'juni_juni/base.html'%}
+
+{%block content%}
+{%for poet in poets%}
+<article class="media content-section">
+    
+    
+      <div class="media-body">
+       
+        <div class="article-metadata">
+          <h2 class="mr-2"><a href='{%url 'poet-detail' poet.id%}'>{{ poet.lekhak }}</a></h2>
+          <small class="text-muted">{{ poet.date_posted|date:'F d, Y' }}</small>
+         
+        </div>
+        <h2><a class="article-title">{{ poet.headline }}</a></h2>
+        <p class="article-content">{{ poet.Description }}</p>
+      </div>
+    </article>
+
+{% endfor %}
+
+
+
+
+{%endblock content%}

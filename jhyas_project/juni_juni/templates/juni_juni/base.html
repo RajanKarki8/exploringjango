@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{%block title%}{%endblock title%}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"  type = 'text/css' href="{%static 'juni_juni/main.css'%}">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="navbar-toggle" href="#"><center>Juni-Juni</center><h1/>
+            {% comment "" %}<button class="navbar-toggler" type="button" >{% endcomment %}
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <div class = 'content-section'>
+                  {%if messages%}
+                  {%for message in messages%}
+                  <div class ='alert alert-{{message.tags}}'>
+                    {{message}}
+                  </div>
+                  {%endfor%}
+                  {%endif%}
+                <a class="nav-item nav-link active" href="{%url 'poet-home'%}">Home <span class="sr-only"></span></a>
+                {%if user.is_authenticated%}
+                
+                
+                <a class="nav-item nav-link" href="{%url 'poet-create'%}">Create</a>
+                <a class="nav-item nav-link" href="{%url 'logout'%}">LogOut</a>
+          
+                {%else %}
+                <a class="nav-item nav-link disabled" href="{%url 'register'%}">Register</a>
+                <a class="nav-item nav-link" href="{%url 'login'%}">LogIn</a>
+                
+                {%endif%}
+              </div>
+            </div>
+          </nav>
+
+
+        {%block content%}
+       
+        {%endblock content%}
+    </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
