@@ -15,6 +15,10 @@ class Poet(models.Model):
     def get_absolute_url(self):
         return reverse('poet-create')
     
-#class Profile(models.Model):
-  #  image=models.OneToOneField()
+class Profile(models.Model):
+    image=models.ImageField(upload_to='poet/', max_length=255, null=True, default='default.jpg')
+    user= models.OneToOneField(User, on_delete=models.CASCADE, default=True)
+    
+    def __str__(self):
+        return f'{self.user.username} Profile'
     
