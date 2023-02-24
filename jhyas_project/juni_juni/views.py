@@ -88,6 +88,7 @@ def delete(request, pk):
     return render(request, 'juni_juni/delete.html',context)
 
 @login_required
+
 def update(request):
     if request.method == 'POST':
         u_form = UpdateForm(request.POST, instance=request.user)

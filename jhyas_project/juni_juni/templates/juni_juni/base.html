@@ -7,8 +7,11 @@
         <title>{%block title%}{%endblock title%}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
         <link rel="stylesheet"  type = 'text/css' href="{%static 'juni_juni/main.css'%}">
     </head>
+    
     <body>
         <nav class="navbar navbar-dark bg-primary">
             <h1 class="navbar-toggle" href="#"><center>Juni-Juni</center><h1/>
@@ -28,7 +31,7 @@
                 {%if user.is_authenticated%}
                 
                 
-                <a class="nav-item nav-link" href="{%url 'poet-create'%}">Create</a>
+                <a class="nav-item nav-link" href="{%url 'poet-create'%}">Create A Poet</a>
                 <a class="nav-item nav-link" href="{%url 'logout'%}">LogOut</a>
           
                 {%else %}
@@ -39,13 +42,15 @@
               </div>
             </div>
           </nav>
-
+         
 
         {%block content%}
-       
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         {%endblock content%}
     </div>
-        
+    <footer>@copyright -2016  ---RajanKarki</footer>
+
         <script src="" async defer></script>
     </body>
 </html>

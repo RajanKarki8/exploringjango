@@ -13,7 +13,7 @@ class Poet(models.Model):
         return self.headline
     
     def get_absolute_url(self):
-        return reverse('poet-create')
+        return reverse('poet-home')
     
 class Profile(models.Model):
     image=models.ImageField(upload_to='poet/', max_length=255, null=True, default='default.jpg')

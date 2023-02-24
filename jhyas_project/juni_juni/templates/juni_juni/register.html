@@ -3,8 +3,8 @@
 {%block  title%} Register - user {%endblock title%}
 
 {%block content%}
-
-    <form method=='POST'>
+<div class = 'mb-3 mt-3'>
+    <form method=='POST' action = '"/action_page.php"'>
         {%csrf_token%}
     
         <legend class ='border-bottom mb-4'>Join today</legend>
@@ -14,6 +14,7 @@
     <button class ='btn-btn-primary' type = 'submit'>Register</button>
    
 </form>
+</div>
 <div class='border-top pt-3'>
     <small class='text-muted'>
         Already have an account? <a class='ml-2' href ='{%url 'login'%}'> Sign In</a>

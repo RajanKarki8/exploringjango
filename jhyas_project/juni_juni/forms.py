@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Poet
 from django.forms import ModelForm
+
 class UserCanAddmoreField(UserCreationForm):
     email = forms.EmailField(required=True)
-    
     
     class Meta:
         model = User
@@ -17,5 +17,4 @@ class UpdateForm(forms.ModelForm):
         model = User
         fields = ['username','email']
         
-
         
